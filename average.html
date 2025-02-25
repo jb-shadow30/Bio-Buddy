@@ -311,9 +311,12 @@
                 event.preventDefault();
                 checkAnswer();
             }
-        });
-
-        loadQuestion();
+});
+        
+// Shuffle and load the first question
+shuffleArray(questions);
+loadQuestion();
+        
     </script>
 </body>
 </html>
