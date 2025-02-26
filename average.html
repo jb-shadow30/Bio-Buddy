@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bio-Buddy Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bio-Buddy Easy Level</title>
     <style>
         body {
             background-image: url('https://assets.onecompiler.app/435c94h45/438gfyjxp/BIOBUD.png');
@@ -54,13 +54,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 10px;
             margin-top: 20px;
         }
         .clue {
-            font-size: 1.2em;
+            font-size: 2em;
             font-weight: bold;
-            margin-top: 15px;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
         }
         .image-container {
             display: flex;
@@ -77,6 +82,7 @@
         }
         .answer-input {
             font-size: 1.2em;
+            gap: 5px;
             padding: 10px;
             border: 2px solid #9886cab7;
             border-radius: 5px;
@@ -85,6 +91,7 @@
         }
         .submit-btn, .nav-btn {
             font-size: 1em;
+            gap: 5px;
             padding: 10px 20px;
             margin-top: 10px;
             background-color: #817ebd;
@@ -111,7 +118,7 @@
     <div class="topnav">
         <a href="https://jb-shadow30.github.io/Bio-Buddy/bbbig.html">Bio-buddy</a>
     </div>
-    <h1>Bio-Buddy Prototype</h1>
+    <h1>Easy Level</h1>
     <div id="game-area">
         <div class="image-container" id="image-container"></div>
         <p id="clue" class="clue"></p>
@@ -126,7 +133,8 @@
     <div class="overlay" id="overlay-correct">
         <div class="popup">
             <h2>You got the correct answer! ✅ </h2>
-            <p id="trivia"></p>
+           <em><h2>Did you know that? </h2></em>
+            <h2><p id="trivia"></p></h2>
             <button class="close-btn" onclick="closePopup('overlay-correct')">OK</button>
         </div>
     </div>
@@ -140,12 +148,13 @@
     
     <script>
         const questions = [
-            {
+             {
                 clue: "This organelle is responsible for breaking down proteins, polysaccharides, lipids, nucleic acids, and even worn-out organelles.",
                 images: [
                     "https://assets.onecompiler.app/43a4bx7nv/43a4bxkpg/64d0ab2f0fa6822f09d640864d483d3b.jpg",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4bxkpg/istockphoto-489871228-612x612.jpg",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4rjy4j/mathematics-19-512.webp",
+                    
                 ],
                 answers: ["lysosome", "lysosomes"],
                 trivia: "This organelle is responsible for breaking down proteins, polysaccharides, lipids, nucleic acids, and even worn-out organelles."
@@ -156,6 +165,7 @@
                     "https://assets.onecompiler.app/43a4bx7nv/43a4rjy4j/GettyImages-1409664434-ae4362bcdf9041d08c62c9d9f1bae9cc.jpg",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4rjy4j/center-ball-arrows-small-700x466.jpg",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4rjy4j/images%20(33).jfif",
+                    
                 ],
                 answers: ["vacuole"],
                 trivia: "This cell part is a storage organelle that holds water, nutrients, and waste while also helping maintain cell shape and internal pressure."
@@ -164,7 +174,8 @@
                 clue: "Type of endoplasmic reticulum that is covered by ribosomes, and involved in protein processing.",
                 images: [
                     "https://assets.onecompiler.app/43a4bx7nv/43a4rjy4j/images%20(34).jfif",
-                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/479900123_1173146017725071_7678999366192372322_n.png"
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/479900123_1173146017725071_7678999366192372322_n.png",
+                    
                 ],
                 answers: ["rough er", "rough endoplasmic reticulum"],
                 trivia: "Type of endoplasmic reticulum that is covered by ribosomes, and involved in protein processing."
@@ -175,6 +186,7 @@
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/th%20(1).jfif",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/th%20(2).jfif",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/Reticulum-Constellation-1.jpg",
+                    
                 ],
                 answers: ["endoplasmic reticulum"],
                 trivia: "It modifies protein and synthesizes lipids."
@@ -183,7 +195,8 @@
                 clue: "It is a network of interconnected tubules and membranes without ribosomes, giving it a smooth appearance.",
                 images: [
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/Storer-Cabin-Potomac-Pine-3-2-scaled-e1731349242455.jpg",
-                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/479900123_1173146017725071_7678999366192372322_n.png"
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/479900123_1173146017725071_7678999366192372322_n.png",
+                    
                 ],
                 answers: ["smooth er", "endoplasmic reticulum"],
                 trivia: "It is a network of interconnected tubules and membranes without ribosomes, giving it a smooth appearance."
@@ -193,7 +206,8 @@
                 images: [
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/GettyImages-BB9905-006-d4cc008f1ba74651bd6f9b3deb39ab86.jpg",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/raw%20steak.jfif",
-                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/images%20(35).jfif"
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/images%20(35).jfif",
+                    
                 ],
                 answers: ["chloroplast"],
                 trivia: "This cell part is an energy-producing organelle that captures sunlight and converts it into chemical energy through photosynthesis."
@@ -203,7 +217,8 @@
                 images: [
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/1140-paintedtoenails.jpg",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/blackpink-bo-roi-fan-viet-noi-got-bts-lam-1-dieu-khung-o-san-khau-quoc-te-159-7384357.webp",
-                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/th%20(3).jfif"
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/th%20(3).jfif",
+                    
                 ],
                 answers: ["mitochondria"],
                 trivia: "It is a bean-like structure that is known to be the “powerhouse” or “energy factory” of the cell."
@@ -212,7 +227,8 @@
                 clue: "This organelle is known as the “post office” of the cell where it sorts, tags, packages, and distributes lipids and proteins",
                 images: [
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/holding-beef-bulgogi-with-chopsticks-thumbnail.jpg",
-                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/distillation-apparatus-andrew-lambert-photography.jpg"
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/distillation-apparatus-andrew-lambert-photography.jpg",
+                    
                 ],
                 answers: ["golgi apparatus"],
                 trivia: "This organelle is known as the “post office” of the cell where it sorts, tags, packages, and distributes lipids and proteins"
@@ -222,7 +238,8 @@
                 images: [
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/overweight-man-fatty-liver.jpg",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/dilute-sulphuric-acid-500x500.webp",
-                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/images%20(39).jfif"
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/images%20(39).jfif",
+                    
                 ],
                 answers: ["fatty acid tails"],
                 trivia: "A part of the phospholipid molecule is hydrophobic"
@@ -232,7 +249,8 @@
                 images: [
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/32218660d46faa142043dadddd213bc7.jpg",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/th%20(4).jfif",
-                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/20659432-human-head-front-profile-and-left-side.jpg"
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/20659432-human-head-front-profile-and-left-side.jpg",
+                    
                 ],
                 answers: ["phosphate head"],
                 trivia: "the water-attracting part of a phospholipid, which is a major component of cell membranes."
@@ -242,7 +260,8 @@
                 images: [
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/476383862_1863884224147936_5299468668023112899_n.png",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/475728870_949577807281597_326604246294918407_n.png",
-                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/476316244_1678067486474877_7584493803056539871_n.png"
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/476316244_1678067486474877_7584493803056539871_n.png",
+                    
                 ],
                 answers: ["pseudopods", "pseudopod"],
                 trivia: "lobes that are formed by amoebas and their eukaryotic cells that are used for movement and ingestion of phagocytosis."
@@ -252,71 +271,84 @@
                 images: [
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/481415339_652634983797887_6430873382914538064_n.png",
                     "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/481796888_1395812851404096_380151829045748079_n.png",
+                    
                 ],
                 answers: ["selective permeablity"],
                 trivia: "the ability of the cell membrane to allow some substances to pass while restricting others."
             },
         ];
         
-        let currentQuestionIndex = 0;
-        function loadQuestion() {
-            const question = questions[currentQuestionIndex];
-            document.getElementById("clue").textContent = question.clue;
-            const imageContainer = document.getElementById("image-container");
-            imageContainer.innerHTML = '';
-            
-            question.images.forEach(imgSrc => {
-                const img = document.createElement("img");
-                img.src = imgSrc;
-                img.className = "image";
-                imageContainer.appendChild(img);
-            });
-            document.getElementById("answer-input").value = '';
-            document.getElementById("next-btn").disabled = true;
-        }
+        // Fisher-Yates Shuffle Algorithm
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+}
 
-        function checkAnswer() {
-            const question = questions[currentQuestionIndex];
-            const userAnswer = document.getElementById("answer-input").value.trim().toLowerCase();
-            
-            if (question.answers.includes(userAnswer)) {
-                document.getElementById("trivia").textContent = question.trivia;
-                document.getElementById("overlay-correct").style.display = "flex";
-                document.getElementById("next-btn").disabled = false;
-            } else {
-                document.getElementById("overlay-wrong").style.display = "flex";
-            }
-        }
+// Shuffle questions before starting
+shuffleArray(questions);
+let currentQuestionIndex = 0;
 
-        function closePopup(overlayId) {
-            document.getElementById(overlayId).style.display = "none";
-        }
+function loadQuestion() {
+    const question = questions[currentQuestionIndex];
+    document.getElementById("clue").textContent = question.clue;
+    const imageContainer = document.getElementById("image-container");
+    imageContainer.innerHTML = '';
+    
+    question.images.forEach(imgSrc => {
+        const img = document.createElement("img");
+        img.src = imgSrc;
+        img.className = "image";
+        imageContainer.appendChild(img);
+    });
 
-        function prevQuestion() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                loadQuestion();
-            }
-        }
+    document.getElementById("answer-input").value = '';
+    document.getElementById("next-btn").disabled = true;
+}
 
-        function nextQuestion() {
-            if (currentQuestionIndex < questions.length - 1) {
-                currentQuestionIndex++;
-                loadQuestion();
-            }
-        }
+function checkAnswer() {
+    const question = questions[currentQuestionIndex];
+    const userAnswer = document.getElementById("answer-input").value.trim().toLowerCase();
+    
+    if (question.answers.includes(userAnswer)) {
+        document.getElementById("trivia").textContent = question.trivia;
+        document.getElementById("overlay-correct").style.display = "flex";
+        document.getElementById("next-btn").disabled = false;
+    } else {
+        document.getElementById("overlay-wrong").style.display = "flex";
+    }
+}
 
-        document.getElementById("answer-input").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                checkAnswer();
-            }
+function closePopup(overlayId) {
+    document.getElementById(overlayId).style.display = "none";
+}
+
+function prevQuestion() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        loadQuestion();
+    }
+}
+
+function nextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        loadQuestion();
+    }
+}
+
+document.getElementById("answer-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        checkAnswer();
+    }
 });
-        
+
 // Shuffle and load the first question
 shuffleArray(questions);
 loadQuestion();
-        
+
     </script>
 </body>
 </html>
