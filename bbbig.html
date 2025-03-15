@@ -3,78 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> 
     <title>Bio-Buddy</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            align-items: center;
             background-image: url('https://assets.onecompiler.app/435c94h45/438gfyjxp/BIOBUD.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
         }
-        .sidebar {
-            width: 250px;
-            background: rgba(236, 232, 249, 0.5);
-            position: absolute;
-            padding: 20px;
-            height: 100vh;
+
+        header {
+            background: #f3e0e0;
+            color: black;
+            padding: 20px 0;
+            width: 100%;
         }
-        .sidebar h2 {
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1px;
+        }
+
+        .bb-logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .logo-container h2 {
+            font-size: xx-large;
+            margin: 0;
             font-weight: bold;
             color: #6a5acd;
         }
-        .sidebar ul {
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        .sidebar li {
-            padding: 10px 0;
+
+        nav ul li {
+            display: inline;
+            font-size: 18px;
             cursor: pointer;
+            padding: 10px 0;
         }
-        .progress-section {
-            background: #d6cfff;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-        }
+
         .content {
-            flex: 1;
-            position: relative;
-            left: 300px;
             padding: 20px;
-            align-items: center;
-            margin: auto;
         }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #f3e0e0;
-            padding: 15px 30px;
-            border-radius: 8px;
-            width: 250%;
-            max-width: 900px;
-            margin: 20px;
+
+        #clickableText {
+            cursor: pointer;
+            color: #6a5acd;
+            font-size: 24px;
+            text-decoration: underline;
         }
-        .profile {
-            display: flex;
-            align-items: center;
+
+        #paddingBox {
+    width: auto; /* Automatically adjust to content size */
+    background-color: #817ebd;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Center horizontally */
+    border-radius: 10px; /* Optional: smooth edges */
+}
+
+
+        /* Hide sections initially */
+        .character-section, #cell-biology-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
-        .profile img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
+
         .character-section {
             display: flex;
             margin-top: 20px;
             gap: 20px;
             align-items: center;
+            justify-content: center;
         }
+
         .character-card {
             background: white;
             padding: 20px;
@@ -82,17 +110,20 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .character-card img {
-            width: 100px;
+            width: 150px;
         }
+
         progress {
             width: 100%;
             margin-top: 10px;
         }
+
         #cell-biology-content {
-            display: none;
             margin-top: 20px;
         }
+
         iframe {
             width: 100%;
             height: 600px;
@@ -101,40 +132,30 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <h2>BIO- <br> BUDDY</h2>
-            <div class="progress-section">
-                <p class="progress-title">🔥 PROGRESS</p>
-            </div>
-            <nav>
-                <ul>
-                    <li onclick="loadHome()">Home</li>
-                    <li onclick="loadCellBiology()">Cell Biology</li>
-                    <li>Notifications</li>
-                </ul>
-            </nav>
-            <hr>
-            <nav>
-                <ul>
-                    <li>My Card</li>
-                    <li>Settings</li>
-                </ul>
-            </nav>
-        </aside>
 
-        <main class="content">
-            <header class="header">
-                <div class="welcome-text">
-                    <h3>Welcome back, Olivia Wilson</h3>
-                    <p>Let's take a detailed look at your progress today</p>
-                </div>
-                <div class="profile">
-                    <img src="https://assets.onecompiler.app/438k8mqkd/438k8my5h/2c590a41-81c7-44fa-900d-20ae15cf1b62.jfif" alt="Profile Picture">
-                    <p>Olivia Wilson <br> <span>Silver Member</span></p>
-                </div>
-            </header>
+    <header>
+        <!-- Logo & Title -->
+        <div class="logo-container">
+            <img src="https://assets.onecompiler.app/435c94h45/438me2mny/bb%20logo.png" alt="BB Logo" class="bb-logo">
+            <h2>BIO-BUDDY</h2>
+        </div>
 
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li onclick="loadHome()">Home</li>
+                <li onclick="loadCellBiology()">Cell Biology</li>
+                <li>Notifications</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h2>Welcome back!</h2>
+        <p id="clickableText"><em>Let's take a detailed look at your progress today</em></p>
+
+        <!-- Padding Box (Container for Sections) -->
+        <div id="paddingBox">
             <section class="character-section">
                 <div class="character-card">
                     <img src="https://assets.onecompiler.app/435c94h45/438me2mny/bb%20logo.png" alt="BioBuddy Character">
@@ -149,20 +170,51 @@
                     <div class="card card-purple"></div>
                 </div>
             </section>
-            
+
             <section id="cell-biology-content">
                 <iframe id="bioFrame" src=""></iframe>
             </section>
-        </main>
+        </div>
     </div>
 
     <script>
-       function loadCellBiology() {
-    window.location.href = "https://jb-shadow30.github.io/Bio-Buddy/ead.html";
-}
+        function loadCellBiology() {
+            window.location.href = "https://jb-shadow30.github.io/Bio-Buddy/ead.html";
+        }
+
         function loadHome() {
-    window.location.href = "https://michellelandicho.wixsite.com/biobuddy";
-}
+            window.location.href = "https://michellelandicho.wixsite.com/biobuddy";
+        }
+
+        document.getElementById('clickableText').addEventListener('click', function() {
+    const paddingBox = document.getElementById('paddingBox');
+    const characterSection = document.querySelector('.character-section');
+
+    if (paddingBox.classList.contains('expanded')) {
+        paddingBox.style.maxHeight = "0px";
+        paddingBox.style.padding = "0";
+        characterSection.style.opacity = "0";
+
+        setTimeout(() => {
+            characterSection.style.display = "none";
+        }, 500);
+
+        paddingBox.classList.remove('expanded');
+    } else {
+        characterSection.style.display = "flex";
+
+        setTimeout(() => {
+            let totalHeight = characterSection.scrollHeight + 31; // Add slight padding
+            paddingBox.style.maxHeight = totalHeight + "px";
+            paddingBox.style.width = "1000px"; // Adjust width to fit content
+            paddingBox.style.padding = "45px"; 
+            characterSection.style.opacity = "1";
+        }, 100);
+
+        paddingBox.classList.add('expanded');
+    }
+});
     </script>
+
 </body>
 </html>
