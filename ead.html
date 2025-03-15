@@ -48,49 +48,35 @@
             }
         }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            position: relative;
-            z-index: 1;
-        }
+       /* Main Container */
+       .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    max-width: 900px;
+    position: absolute; /* Change from relative */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering Trick */
+    z-index: 1;
+    text-align: center;
+    background:linear-gradient(#f4dbdf, white, #bcb9e4);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
 
-        /* EXP Bar Styling */
-        .exp-bar-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .exp-bar {
-            width: 200px;
-            height: 15px;
-            background: #e0dff9;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid #b5a7e6;
-        }
-
-        .exp-fill {
-            height: 100%;
-            background: #6a5acd;
-            width: 0%; /* Adjust width based on EXP progress */
-            border-radius: 10px;
-        }
-
-        .exp-text {
-            font-size: 14px;
-            color: #5a4bb5;
-            font-weight: bold;
-            margin-top: 5px;
-        }
-
+h1 {
+    margin-bottom: 20px;
+}
+        
         /* Buttons */
         .button-container {
             display: flex;
             justify-content: center;
+            align-self: center;
         }
 
         .difficulty-button {
@@ -123,18 +109,6 @@
     font-weight: bold;
 }
 
-.exp-bar-container {
-    margin-top: 10px;
-}
-.exp-fill {
-    height: 100%;
-    background: #6a5acd;
-    width: 0%; /* Default fill */
-    border-radius: 10px;
-    transition: width 0.5s ease-in-out; /* Smooth fill animation */
-}
-
-
     </style>
     </style>
 </head>
@@ -145,39 +119,12 @@
     <div class="background"></div>
     
     <div class="container">
-
-        <!-- Difficulty Buttons -->
-<div class="button-container">
-    <div class="button-wrapper">
-        <button class="difficulty-button" onclick="loadCellBiology()">Easy</button>
-        <div class="exp-bar-container">
-            <div class="exp-bar">
-                <div class="exp-fill" style="width: 0%;"></div> <!-- Adjust width for progress -->
+            <h1>Select Game Level</h1>
+            <div class="button-container">
+                <button class="difficulty-button" onclick="loadCellBiology()">Easy</button>
+                <button class="difficulty-button" onclick="loadAverage()">Average</button>
+                <button class="difficulty-button" onclick="loadDifficult()">Difficult</button>
             </div>
-            <p class="exp-text">0/30 pts</p>
-        </div>
-        <p class="button-text">TRY NOW!</p>
-    </div>
-    <div class="button-wrapper">
-        <button class="difficulty-button" onclick="loadAverage()">Average</button>
-        <div class="exp-bar-container">
-            <div class="exp-bar">
-                <div class="exp-fill" style="width: 0%;"></div>
-            </div>
-            <p class="exp-text">0/50 pts</p>
-        </div>
-        <p class="button-text">LOCKED</p>
-    </div>
-    <div class="button-wrapper">
-        <button class="difficulty-button" onclick="loadDifficult()">Difficult</button>
-        <div class="exp-bar-container">
-            <div class="exp-bar">
-                <div class="exp-fill" style="width: 0%;"></div>
-            </div>
-            <p class="exp-text">0/100 pts</p>
-        </div>
-        <p class="button-text">LOCKED</p>
-    </div>
 </div>
 
     <script>
