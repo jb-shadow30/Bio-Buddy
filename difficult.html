@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bio-Buddy Difficult Level</title>
+    <title>Bio-Buddy Easy Level</title>
     <style>
         body {
             background-image: url('https://assets.onecompiler.app/435c94h45/438gfyjxp/BIOBUD.png');
@@ -123,7 +123,7 @@
     <div class="topnav">
         <a href="https://jb-shadow30.github.io/Bio-Buddy/bbbig.html">Bio-buddy</a>
     </div>
-    <h1>Difficult Level</h1>
+    <h1>Easy Level</h1>
     <div id="game-area">
         <div class="image-container" id="image-container"></div>
         <p id="clue" class="clue"></p>
@@ -150,125 +150,114 @@
             <button class="close-btn" onclick="closePopup('overlay-wrong')">OK</button>
         </div>
     </div>
-    
+
     <script>
-        const questions = [
-            {
-                clue: " Lobes that are formed by amoebas and their eukaryotic cells that are used for movement and ingestion of phagocytosis.",
+    const questions = [
+    {
+                clue: "This organelle is responsible for breaking down proteins, polysaccharides, lipids, nucleic acids, and even worn-out organelles.",
                 images: [
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/sewing-top-photo.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/hands-kneading-dough.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/images%20(6).jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4bxkpg/64d0ab2f0fa6822f09d640864d483d3b.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4bxkpg/istockphoto-489871228-612x612.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4rjy4j/mathematics-19-512.webp",
                     
                 ],
-                answers: ["pseudopods"],
-                trivia: "These false feet help amoebas move and engulf food by extending their cytoplasm in a crawling motion!"
-            }, 
-            {
-                clue: " This organelle is known as the “post office” of the cell where it sorts, tags, packages, and distributes lipids and proteins.",
-                images: [
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/holding-beef-bulgogi-with-chopsticks-thumbnail.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/distillation-apparatus-andrew-lambert-photography.jpg",
-                    
-                ],
-                answers: ["golgi apparatus"],
-                trivia: "Known as the post office of the cell, it packages and ships proteins to their destinations inside and outside the cell!"
-            }, 
-            {
-                clue: "This cell part is a structural network of protein fibers that provides shape, support, and movement for the cell while also aiding in intracellular transport.",
-                images: [
-                    "https://assets.onecompiler.app/43a7vak8b/43a7vbbzb/images%20(2).jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43a7vbbzb/istockphoto-1064310652-612x612.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43a7vbbzb/images%20(3).jpg",
-                    
-                ],
-                answers: ["cytoskeleton"],
-                trivia: "This internal framework gives cells shape and strength, acting like the scaffolding and highways for organelle movement!"
+                answers: ["lysosome", "lysosomes"],
+                trivia: "Almost every cell in your body has hundreds to thousands of lysosomes working 24/7 to keep them clean!"
             },
             {
-                clue: "These small organelles are known to detoxify poisons that may enter the body as well as break down fatty and amino acids.",
+                clue: "This cell part is a storage organelle that holds water, nutrients, and waste while also helping maintain cell shape and internal pressure.",
                 images: [
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/images.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/blue-ocean-28668-2560x1600.webp",
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/mathematics-19-512.webp",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4rjy4j/GettyImages-1409664434-ae4362bcdf9041d08c62c9d9f1bae9cc.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4rjy4j/center-ball-arrows-small-700x466.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4rjy4j/images%20(33).jfif",
                     
                 ],
-                answers: ["peroxisome"],
-                trivia: "These tiny organelles help detoxify harmful substances, like breaking down hydrogen peroxide into water and oxygen!"
+                answers: ["vacuole"],
+                trivia: "The central vacuole in plant cells can take up 80-90% of the cell’s volume, acting like a storage warehouse!"
             },
             {
-                clue: "This cell part is an organelle that helps organize microtubules and plays a crucial role in cell division by assisting in the formation of the spindle fibers.",
+                clue: "Type of endoplasmic reticulum that is covered by ribosomes, and involved in protein processing.",
                 images: [
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/2009phil10centobv.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/images%20(4).jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/076484068713_1.webp",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4rjy4j/images%20(34).jfif",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/479900123_1173146017725071_7678999366192372322_n.png",
                     
                 ],
-                answers: ["centrioles"],
-                trivia: "These barrel-shaped structures are essential for cell division, helping organize the spindle fibers that pull chromosomes apart!"
+                answers: ["rough er", "rough endoplasmic reticulum"],
+                trivia: "Produces proteins essential for cell function, growth, and communication!"
             },
             {
-                clue: "This cell part is an organelle located inside the nucleus that is responsible for producing ribosomes, which are essential for protein synthesis.",
+                clue: "It modifies protein and synthesizes lipids.",
                 images: [
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/images%20(5).jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/did-you-know-zodiac-Leo.webp",
-                    "https://assets.onecompiler.app/43a7vak8b/43b94t7vq/weight-loss.png",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/th%20(1).jfif",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/th%20(2).jfif",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/Reticulum-Constellation-1.jpg",
                     
                 ],
-                answers: ["nucleolus"],
-                trivia: "The ribosome factory inside the nucleus, where ribosomal RNA (rRNA) is made and assembled into ribosomes!"
+                answers: ["endoplasmic reticulum"],
+                trivia: "It transports proteins, lipids, and other molecules throughout the cell, just like a road network in a city."
             },
             {
-                clue: "The ability of the cell membrane to allow some substances to pass while restricting others.",
+                clue: "It is a network of interconnected tubules and membranes without ribosomes, giving it a smooth appearance.",
                 images: [
-                    "https://assets.onecompiler.app/43a7vak8b/43a7vbbzb/Child-Hates-Vegetables-How-to-Encourage-Kids-to-Eat-Greens.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43a7vbbzb/images.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43a7vbbzb/images%20(1).jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/Storer-Cabin-Potomac-Pine-3-2-scaled-e1731349242455.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/479900123_1173146017725071_7678999366192372322_n.png",
                     
                 ],
-                answers: ["selective permeability"],
-                trivia: "The reason why the cell membrane is picky. It controls what enters and exits, keeping harmful substances out and vital molecules in!"
+                answers: ["smooth er", "endoplasmic reticulum"],
+                trivia: "It produces phospholipids, cholesterol, and steroid hormones, which are vital for cell membranes."
             },
             {
-                clue: "This creates a watertight seal to keep liquid from escaping between the cells.",
+                clue: "This cell part is an energy-producing organelle that captures sunlight and converts it into chemical energy through photosynthesis.",
                 images: [
-                    "https://assets.onecompiler.app/43a7vak8b/43bg8pex2/istockphoto-504681009-612x612.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43bg8pex2/junk.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43bg8pex2/shaun-the-sheep-2000-aedde1a2fbc14a168c93ebaa9e4e76ad.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/GettyImages-BB9905-006-d4cc008f1ba74651bd6f9b3deb39ab86.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/raw%20steak.jfif",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/images%20(35).jfif",
                     
                 ],
-                answers: ["tight junctions", "tight junction"],
-                trivia: "These seal neighboring cells together, forming a waterproof barrier—like in the intestines, preventing leaks!"
+                answers: ["chloroplast"],
+                trivia: "Chloroplasts are one of the most essential organelles for life on Earth, producing oxygen and food for almost all living things!"
             },
             {
-                clue: "This creates a watertight seal to keep liquid from escaping between the cells.",
+                clue: "It is a bean-like structure that is known to be the “powerhouse” or “energy factory” of the cell.",
                 images: [
-                    "https://assets.onecompiler.app/43a7vak8b/43bg8pex2/front-teeth-gap-without-braces.png",
-                    "https://assets.onecompiler.app/43a7vak8b/43bg8pex2/junk.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43bg8pex2/Ion_portal.webp",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/1140-paintedtoenails.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/blackpink-bo-roi-fan-viet-noi-got-bts-lam-1-dieu-khung-o-san-khau-quoc-te-159-7384357.webp",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/th%20(3).jfif",
                     
                 ],
-                answers: ["gap junction", "gap junctions"],
-                trivia: "Tiny tunnels between cells that allow ions and molecules to pass directly, helping in rapid communication, especially in the heart!"
+                answers: ["mitochondria"],
+                trivia: "When a cell needs more energy, mitochondria can divide and multiply on their own to meet demand."
             },
             {
-                clue: "Cells undergo these changes to adapt with its environment and is sometimes referred to as cell specialization",
+                clue: "A part of the phospholipid molecule is hydrophobic",
                 images: [
-                    "https://assets.onecompiler.app/43a7vak8b/43bg8pex2/jail.jpg",
-                    "https://assets.onecompiler.app/43a7vak8b/43bg8pex2/genetic-modification-techniques-and-applications-382001-960x540.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/overweight-man-fatty-liver.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/dilute-sulphuric-acid-500x500.webp",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/images%20(39).jfif",
                     
                 ],
-                answers: ["cell modification"],
-                trivia: "Cells can change their structure for specific functions, like microvilli increasing surface area for absorption in the intestines!"
+                answers: ["fatty acid tails"],
+                trivia: "fatty acid tails interact with cholesterol, which helps maintain membrane stability and fluidity."
             },
-        ];
-        
-        // Fisher-Yates Shuffle Algorithm
+            {
+                clue: "the water-attracting part of a phospholipid, which is a major component of cell membranes.",
+                images: [
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/32218660d46faa142043dadddd213bc7.jpg",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/th%20(4).jfif",
+                    "https://assets.onecompiler.app/43a4bx7nv/43a4u7d8u/20659432-human-head-front-profile-and-left-side.jpg",
+                    
+                ],
+                answers: ["phosphate head"],
+                trivia: "Without the phosphate head, cells wouldn’t have a selectively permeable membrane, meaning harmful substances could freely enter!"
+            },
+];
+
+// Fisher-Yates Shuffle Algorithm
 function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
-    }
+for (let i = array.length - 1; i > 0; i--) {
+const j = Math.floor(Math.random() * (i + 1));
+[array[i], array[j]] = [array[j], array[i]]; // Swap elements
+}
 }
 
 // Shuffle questions before starting
@@ -276,64 +265,88 @@ shuffleArray(questions);
 let currentQuestionIndex = 0;
 
 function loadQuestion() {
-    const question = questions[currentQuestionIndex];
-    document.getElementById("clue").textContent = question.clue;
-    const imageContainer = document.getElementById("image-container");
-    imageContainer.innerHTML = '';
-    
-    question.images.forEach(imgSrc => {
-        const img = document.createElement("img");
-        img.src = imgSrc;
-        img.className = "image";
-        imageContainer.appendChild(img);
-    });
+const question = questions[currentQuestionIndex];
+document.getElementById("clue").textContent = question.clue;
+const imageContainer = document.getElementById("image-container");
+imageContainer.innerHTML = '';
 
-    document.getElementById("answer-input").value = '';
-    document.getElementById("next-btn").disabled = true;
+question.images.forEach(imgSrc => {
+const img = document.createElement("img");
+img.src = imgSrc;
+img.className = "image";
+imageContainer.appendChild(img);
+});
+
+document.getElementById("answer-input").value = '';
+document.getElementById("next-btn").disabled = true;
 }
+
+// Shuffle questions before starting (do this only once at the beginning)
+shuffleArray(questions);
 
 function checkAnswer() {
     const question = questions[currentQuestionIndex];
     const userAnswer = document.getElementById("answer-input").value.trim().toLowerCase();
-    
+
+    if (!userAnswer) {
+        alert("Please enter an answer.");
+        return;
+    }
+
     if (question.answers.includes(userAnswer)) {
         document.getElementById("trivia").textContent = question.trivia;
         document.getElementById("overlay-correct").style.display = "flex";
         document.getElementById("next-btn").disabled = false;
+        updateXP("easy");  // Add the difficulty level here based on the current question
     } else {
         document.getElementById("overlay-wrong").style.display = "flex";
     }
 }
 
+
 function closePopup(overlayId) {
-    document.getElementById(overlayId).style.display = "none";
+document.getElementById(overlayId).style.display = "none";
 }
 
 function prevQuestion() {
-    if (currentQuestionIndex > 0) {
-        currentQuestionIndex--;
-        loadQuestion();
-    }
+if (currentQuestionIndex > 0) {
+currentQuestionIndex--;
+loadQuestion();
+}
 }
 
 function nextQuestion() {
-    if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
-        loadQuestion();
-    }
+if (currentQuestionIndex < questions.length - 1) {
+currentQuestionIndex++;
+loadQuestion();
+}
 }
 
 document.getElementById("answer-input").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        checkAnswer();
-    }
+if (event.key === "Enter") {
+event.preventDefault();
+checkAnswer();
+}
 });
 
 // Shuffle and load the first question
 shuffleArray(questions);
 loadQuestion();
 
-    </script>
+const username = prompt("Enter your username:");  // Ask player for username
+
+function updateXP(difficulty) {
+    fetch("http://localhost:2090/update/XP", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, difficulty })
+    })
+    .then(res => res.json())
+    .then(data => console.log("XP Updated:", data))
+    .catch(err => console.error("Error updating XP:", err));
+}
+
+</script>
+
 </body>
 </html>
